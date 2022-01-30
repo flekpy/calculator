@@ -1,0 +1,58 @@
+
+<div data-cabinet="person-cabinet" class="person-cabinet-container" id={{id}}>
+
+  <div class="person-form">
+    <div class="person-cabinet-title">Узнать индекс массы тела</div>
+    <form class="person-form-value" data-index-form="index">
+
+      <div class="div-container">
+        <label class="person-label" for="">Вес, кг</label>
+        <input class="person-input" data-weight="weight" required type="text">
+
+        <label class="person-label" for="">Возраст</label>
+        <input class="person-input" data-age="age" type="text">
+
+        <label class="person-label" for="">Размер бедра, см</label>
+        <input class="person-input" data-hip="hip" type="text">
+      </div>
+
+      <div class="div-container div-container-margin-top ">      
+        <label class="person-label" for="">Рост, см</label>
+        <input class="person-input" data-height="height" type="text">
+
+        <label class="person-label" for="">Пол, m/f</label>
+        <input class="person-input" data-sex="sex" type="text">
+
+        <label class="person-label" for="">Размер талии, см</label>
+        <input class="person-input" data-waist="waist" type="text">
+      </div>
+
+      <button class="person-btn">узнать результат</button>
+
+    </form>
+  </div>
+
+  <div data-person-result="result" class="person-result">
+    <div class="person-result-title">Ваш результат</div>
+
+    {{#each index}}
+    <div class="person-result-body">
+  
+      <div class="result-raw-data"> <span class="title-data">Исходные данные:</span> вес: {{this.original_weight}}, рост: {{this.original_height}}, возраст: {{this.age}}, пол: {{this.sex}}</div>
+
+      <div class="result-raw-data"> <span class="title-data">Статус:</span> {{this.status}}</div>
+
+      <div class="result-raw-data"> <span class="title-data">Риск:</span> {{this.risk}}</div>
+      
+      <div class="result-raw-data"> <span class="title-data">BMR, Базальная скорость обмена веществ, calories:</span> {{this.bmr}}</div>
+      
+      <div class="result-raw-data"> <span class="title-data">Рекомендованный вес:</span> {{this.ideal_weight}}</div>
+
+      <div class="result-raw-data"> <span class="title-data">Дата:</span> {{this.createdAt}}</div>
+      <hr>
+    </div>
+    {{/each}}
+
+  </div>
+
+</div>

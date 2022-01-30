@@ -1,0 +1,16 @@
+<div class="div-login-container">
+
+  <h2 class="title-login">Вход</h2>
+    {{#if error}}
+    <div class="div-error-user">{{error}}</div>
+    {{/if}}
+
+  <form class="form-login" data-loginForm="login-form" action="/users/login" method="POST">
+
+    <input id="email-login" name="email" data-emailLogin="email-login" class="input-form-login" type="text" placeholder="email">
+    <input id="password-login" name="password" data-passwordLogin="password-login" class="input-form-login" type="password" placeholder="пароль">
+
+    <button class="btn-login" type="submit">войти</button>
+  </form>
+
+</div>

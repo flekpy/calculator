@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script defer src="/js/application.js"></script>
+    <title>Calculator</title>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="content-container">
+
+        <header class="header">
+
+          <div class="logo">Calculator</div>
+        
+          <nav>
+            {{#if youLogged}}
+              <span class="name-user"> Привет, {{youLogged}}</span>
+              <a data-login="login" class="btn-logout" href="/users/logout">Выйти </a>
+            {{else}}
+              <a href="/users/registrations" id="btn-reg" class="registration-btn">Зарегистрироваться</a>
+              <a href="/users/login" id="btn-login" class="login-btn">Войти</a>
+            {{/if}}
+          </nav>
+        
+        </header>
+
+
+        {{{body}}}
+        <img class="img-donuts" src="/upload/png-transparent.png" alt="">
+        <img class="candy-img" src="/upload/white-food.png" alt="">
+      </div>
+    </div>
+ 
+  </body>
+  
+</html>
